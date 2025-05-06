@@ -12,6 +12,7 @@ import org.jooq.Configuration;
 import org.jooq.generated.tables.JRental;
 import org.jooq.generated.tables.pojos.Rental;
 import org.jooq.generated.tables.records.RentalRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DAOImpl;
 import org.jooq.types.UInteger;
 
@@ -89,14 +90,14 @@ public class RentalDao extends DAOImpl<RentalRecord, Rental, Integer> {
      * Fetch records that have <code>inventory_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfInventoryId(UInteger lowerInclusive, UInteger upperInclusive) {
+    public List<Rental> fetchRangeOfInventoryId(Long lowerInclusive, Long upperInclusive) {
         return fetchRange(JRental.RENTAL.INVENTORY_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>inventory_id IN (values)</code>
      */
-    public List<Rental> fetchByInventoryId(UInteger... values) {
+    public List<Rental> fetchByInventoryId(Long... values) {
         return fetch(JRental.RENTAL.INVENTORY_ID, values);
     }
 
@@ -104,14 +105,14 @@ public class RentalDao extends DAOImpl<RentalRecord, Rental, Integer> {
      * Fetch records that have <code>customer_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfCustomerId(UInteger lowerInclusive, UInteger upperInclusive) {
+    public List<Rental> fetchRangeOfCustomerId(Long lowerInclusive, Long upperInclusive) {
         return fetchRange(JRental.RENTAL.CUSTOMER_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>customer_id IN (values)</code>
      */
-    public List<Rental> fetchByCustomerId(UInteger... values) {
+    public List<Rental> fetchByCustomerId(Long... values) {
         return fetch(JRental.RENTAL.CUSTOMER_ID, values);
     }
 
@@ -134,14 +135,14 @@ public class RentalDao extends DAOImpl<RentalRecord, Rental, Integer> {
      * Fetch records that have <code>staff_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfStaffId(UInteger lowerInclusive, UInteger upperInclusive) {
+    public List<Rental> fetchRangeOfStaffId(Long lowerInclusive, Long upperInclusive) {
         return fetchRange(JRental.RENTAL.STAFF_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>staff_id IN (values)</code>
      */
-    public List<Rental> fetchByStaffId(UInteger... values) {
+    public List<Rental> fetchByStaffId(Long... values) {
         return fetch(JRental.RENTAL.STAFF_ID, values);
     }
 
